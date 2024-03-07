@@ -6,12 +6,12 @@ const app = express();
 const router = require("./user/routes/router");
 const Dbconnect = require("./config/Dbconnection");
 const bodyParser= require("body-parser")
-
+const Base_url = process.env.BASE_URL
 
 
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: `${Base_url}`,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 200
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 app.use(bodyParser.json())
 
-app.use("/admin", router);
+app.use(`${Base_url}/admin`, router);
 
 Dbconnect();
 
