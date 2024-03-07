@@ -10,17 +10,17 @@ const Base_url = process.env.BASE_URL
 
 
 
-const corsOptions = {
-    origin: `${Base_url}`,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 200
+// const corsOptions = {
+//     origin: `${Base_url}`,
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     preflightContinue: false,
+//     optionsSuccessStatus: 200
     
-};
+// };
 
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(bodyParser.json())
 
 app.use(`${Base_url}/admin`, router);
