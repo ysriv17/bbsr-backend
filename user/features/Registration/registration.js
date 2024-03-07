@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const register = async (req, res, next) => {
 
   try {
-    const { email, password, name } = await req.body;
+    const { email, password, name ,role } = await req.body;
     let user = await signup.findOne({"verifieduser.email" : email})
    
     const avaiter = req.file.path
@@ -25,7 +25,8 @@ const register = async (req, res, next) => {
         email: `${email}`,
         password: `${hashedpassword}`,
         name: `${name}`,
-        avaiter: `${avaiter}`
+        avaiter: `${avaiter}`,
+        role: `${role}`
       }
        await signup.create({ verifieduser : newuser });
 

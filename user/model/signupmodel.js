@@ -18,7 +18,11 @@ const signupschema = new mongoose.Schema({
         password: {
             type: String,
             required: [true]
-        }
+        },
+         role: {
+            type: String,
+            required: [true]
+        },
     },
     createdAt: { type: String },
     updatedAt: { type: String, },
