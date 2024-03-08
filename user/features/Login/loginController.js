@@ -10,6 +10,7 @@ const Login = async (req, res, next) => {
         let user = await signup.findOne({ "verifieduser.email": `${email}` })
         console.log(user)
         if (user == null) {
+            console.log(user not found)
             res.status(100).json("user not found");
             
             throw new Error("user not valid");
@@ -23,7 +24,7 @@ const Login = async (req, res, next) => {
         }
         else {
             res.status(100).json({ message: "wrong password" });
-              
+              console.log("im in else")
             throw new Error("wrong password")
         }
     }
