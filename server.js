@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors(corsOptions));
 app.use(bodyParser.json())
 
-app.use(`${Base_url}/admin`, router);
+app.use("/admin", router);
 
 Dbconnect();
 
