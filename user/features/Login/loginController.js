@@ -14,7 +14,7 @@ const Login = async (req, res, next) => {
             
             throw new Error("user not valid");
         }
-        else if (user.verifieduser.email == email && bcrypt.compare(password, user.verifieduser.password)) {
+        else if (user.verifieduser.email == email && await bcrypt.compare(password, user.verifieduser.password)) {
             console.log("imhere beata",bcrypt.compare(password, user.verifieduser.password))
             const accesstkn = jwttoken(user)
             res.status(201).json({ accesstoken: accesstkn}); 
