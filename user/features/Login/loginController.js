@@ -23,7 +23,7 @@ const Login = async (req, res, next) => {
         }
     }
     catch (err) {
-        throw new Error(`${err}`)
+        throw new Error(`${err}llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll`)
     }
 }
 
