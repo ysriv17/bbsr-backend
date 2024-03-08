@@ -6,10 +6,9 @@ const jwttoken = require("../../../utiles/createtoken")
 const Login = async (req, res, next) => {
     const { email, password } = await req.body;
     try {
-
         let user = await signup.findOne({ "verifieduser.email": `${email}` })
         console.log(user)
-        if (user == null) {
+        if (user === null) {
             console.log(user not found)
             res.status(100).json("user not found");
             
