@@ -17,7 +17,7 @@ const Login = async (req, res, next) => {
         else if (user.verifieduser.email == email && bcrypt.compare(password, user.verifieduser.password)) {
             console.log("imhere beata")
             const accesstkn = jwttoken(user)
-            res.status(200).json({ accesstoken: accesstkn}); 
+            res.status(201).json({ accesstoken: accesstkn}); 
            
             
         }
