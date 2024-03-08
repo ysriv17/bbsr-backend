@@ -9,9 +9,9 @@ const Login = async (req, res, next) => {
         let user = await signup.findOne({ "verifieduser.email": `${email}` })
         console.log(user)
         if (user === null) {
-         
+              console.log("user not found")
             res.json({ message:"user not found"});
-               console.log("user not found")
+          
             // throw new Error("user not valid");
         }
         else if (user.verifieduser.email == email && await bcrypt.compare(password, user.verifieduser.password)) {
@@ -22,8 +22,9 @@ const Login = async (req, res, next) => {
             
         }
         else {
+            console.log("im in else")
             res.status(100).json({ message: "wrong password" });
-              console.log("im in else")
+              
             // throw new Error("wrong password")
         }
     }
