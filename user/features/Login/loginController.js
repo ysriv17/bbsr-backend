@@ -10,7 +10,7 @@ const Login = async (req, res, next) => {
         console.log(user)
         if (user === null) {
             console.log("user not found")
-            res.status(100).json("user not found");
+            res.status(100).json({ message:"user not found"});
             
             // throw new Error("user not valid");
         }
