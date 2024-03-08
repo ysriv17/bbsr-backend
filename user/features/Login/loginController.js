@@ -10,7 +10,7 @@ const Login = async (req, res, next) => {
         console.log(user)
         if (user === null) {
          
-            res.status(100).json({ "message":"user not found"});
+            res.status(100).json({ message:"user not found"});
                console.log("user not found")
             // throw new Error("user not valid");
         }
@@ -22,7 +22,7 @@ const Login = async (req, res, next) => {
             
         }
         else {
-            res.status(100).json({ "message": "wrong password" });
+            res.status(100).json({ message: "wrong password" });
               console.log("im in else")
             // throw new Error("wrong password")
         }
