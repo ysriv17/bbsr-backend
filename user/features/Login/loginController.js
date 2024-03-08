@@ -7,7 +7,7 @@ const Login = async (req, res, next) => {
     const { email, password } = await req.body;
     try {
 
-        let user = await signup.findOne({ "verifieduser.email": email })
+        let user = await signup.findOne({ "verifieduser.email": `${email}` })
         console.log(user.verifieduser.email);
         if (user == null) {
             res.json("user not found");
