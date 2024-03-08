@@ -12,7 +12,7 @@ const Login = async (req, res, next) => {
         if (user == null) {
             res.status(100).json("user not found");
             
-            throw new Error("user not valid");
+            // throw new Error("user not valid");
         }
         else if (user.verifieduser.email == email && bcrypt.compare(password, user.verifieduser.password)) {
             console.log("imhere beata")
@@ -24,7 +24,7 @@ const Login = async (req, res, next) => {
         else {
             res.status(100).json({ message: "wrong password" });
               
-            throw new Error("wrong password")
+            // throw new Error("wrong password")
         }
     }
     catch (err) {
