@@ -10,19 +10,19 @@ const Login = async (req, res, next) => {
         let user = await signup.findOne({ "verifieduser.email": `${email}` })
         console.log(user)
         if (user == null) {
-            res.json("user not found").status(100);
+            res.status(100).json("user not found");
             
             throw new Error("user not valid");
         }
         else if (user.verifieduser.email == email && bcrypt.compare(password, user.verifieduser.password)) {
             console.log("imhere beata")
             const accesstkn = jwttoken(user)
-            res.json({ accesstoken: accesstkn}).status(200); 
+            res.status(200).json({ accesstoken: accesstkn}); 
            
             
         }
         else {
-            res.json({ message: "wrong password" }).status(100);
+            res.status(100).json({ message: "wrong password" });
               
             throw new Error("wrong password")
         }
